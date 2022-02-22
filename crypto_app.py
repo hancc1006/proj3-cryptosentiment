@@ -48,13 +48,11 @@ def get_data():
             return render_template('crypto.html',btc_aug=btc_aug,btc_col=list_features, eth_aug=eth_aug,url=url,feature_names=feature_names, x_input=x_input, prediction=predictions)
     
     return render_template('crypto.html',btc_aug=btc_aug,btc_col=list_features, eth_aug=eth_aug,type=type, feature_names=feature_names,x_input=x_input, prediction=predictions)
-    #plot_sample(sentiment,dataframe)
-    #plot_relation(dataframe)
-    #plot_sentiment(sentiment)
-    #return render_template('crypto.html',btc_aug=btc_aug,btc_col=btc_col, eth_aug=eth_aug,eth_col=eth_col,type=type, feature_names=feature_names)
+
 
 
 if __name__ == '__main__':
     #diagnose any errors you come across when running the code
-    app.run(debug=True)
+    #debug=True
+    app.run()
 
