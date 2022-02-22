@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>My Webpage</title>
+    </head>
+    <body>
+        <form action="/" method="POST">
+            <table>
+                <tr>
+                    Select a Sentiment Value:
+                    <br>
+                    {% for btc in btc_col %}
+                        
+
+                        <td><input type="radio" name="sentiment" value="{{btc}}">{{btc}}</td>
+                    {% endfor %}
+
+                </tr>
+            </table>
+            <br>
+            Select a Dataframe:
+            <table>
+                <br>
+                <td><input type="radio" name="dataframe" value="btc_aug">btc_aug</td> 
+                <td><input type="radio" name="dataframe" value="eth_aug">eth_aug</td> 
+            </table> 
+            <br>
+            <table style="width:auto">
+                {% for f in feature_names %}
+                <td>
+                    {{f}}
+                    <input type="text" name="{{f}}" value="{{x_input[loop.index0]}}">
+                </td>
+                
+                {% endfor %}
+                
+            </table>
+            <br>
+            <input type="submit" value="Submit" method="get">   
+        </form>
+        <p>
+            <!--Loop through 3 different classes, print class names and probabilities as percentages-->
+            Model Prediction:
+            {% for p in prediction %}
+            <br> {{p['name']}} : {{ 100*p['prob'] | round(4) }}
+            {% endfor %}
+        </p>
+        <p>
+            <!--Loop through 3 different classes, print class names and probabilities as percentages-->
+            
+        </p>
+        <!--<ul>-->
+            <!--for loop like in python-->
+            <!--{% for i in range(1,6) %}
+                <li>Item {{i}}</li>
+            {% endfor %}
+        </ul>-->
+        <p>
+            <!--Loop through 3 different classes, print class names and probabilities as percentages-->
+            Model Graphs:
+            <br>
+            <table>
+                <tr>
+                    <td><img onerror="this.onerror=null; this.src='static/images/bitcoin.jpg';" src="{{url}}" alt="Chart" height="auto" width="auto"></td>
+                </tr>
+                <tr>
+                    <td><img onerror="this.onerror=null; this.src='static/images/bitcoin.jpg';" src="static/images/pairwise_plot_btc.jpg" alt="Chart" height="700" width="700"></td>
+                    <td><img onerror="this.onerror=null; this.src='static/images/bitcoin.jpg';" src="static/images/pairwise_plot_eth.jpg" alt="Chart" height="700" width="700"></td>
+                    
+                </tr>
+            </table>
+            
+            <br>
+        </p>
+    </body>
+</html>

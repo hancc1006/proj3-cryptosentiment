@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>My Webpage</title>
+    </head>
+    <body>
+        <p>
+            List of columns to choose from:
+            <br>
+            {{btc_col}}
+            <br>
+            List of data frames to choose from:
+            <br>
+            btc_aug, eth_aug
+        </p>
+        <form action="/get">
+            <br>
+            Dataframe
+            <br>
+            <input type="'text" name="dataframe" value="Enter dataframe">
+            <br>
+            Sentiment
+            <br>
+            <input type="'text" name="sentiment" value="Enter sentiment from column">
+            <br>
+            <input type="submit" value="Submit" method="get">
+        </form>
+        <!--<ul>-->
+            <!--for loop like in python-->
+            <!--{% for i in range(1,6) %}
+                <li>Item {{i}}</li>
+            {% endfor %}
+        </ul>-->
+        <p>
+            Chosen dataframe:
+            <br>
+            {{dataframe}}
+        </p>
+        <p>
+            <!--Loop through 3 different classes, print class names and probabilities as percentages-->
+            Model Graphs:
+            <img src={{url}} alt="Chart" height="auto" width="100%">
+        </p>
+    </body>
+</html>
