@@ -7,7 +7,7 @@ import numpy as np
 from werkzeug.datastructures import MultiDict
 app = Flask(__name__)
 
-port = int(os.environ.get('PORT', 5000))
+port = int(os.environ.get('PORT', 8585))
 
 @app.route('/', methods=["GET", "POST"])  # the site to route to, index/main in this case
 def get_data():
