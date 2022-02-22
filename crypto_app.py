@@ -54,5 +54,5 @@ def get_data():
 if __name__ == '__main__':
     #diagnose any errors you come across when running the code
     #debug=True
-    app.run()
+    app.run(debug=True,use_reloader=False)
 
